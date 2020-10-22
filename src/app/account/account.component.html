@@ -1,4 +1,20 @@
 <app-header></app-header>
-<p>
-  account works!
-</p>
+<div *ngIf="userInfo !== undefined" class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="{{ userInfo.photoURL }}" class="img-circle">
+        </div>
+        
+        <div class="span8">
+            <h3>{{ userInfo.displayName }}</h3>
+            <span><strong>Email:</strong></span>{{ userInfo.email }}
+            <br>
+            <span><strong>Share this Url with friends and get their Opinion</strong></span>
+            <br>
+            <span> {{ hostName }}?id={{ userInfo.id }} </span>
+            <!-- <h6> Ubication: Colombia</h6>
+            <h6>Old: 1 Year</h6> -->
+            <!-- <h6><a href="#">More... </a></h6> -->
+        </div>
+</div>
+</div>

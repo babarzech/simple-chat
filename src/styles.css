@@ -2,6 +2,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+/*@import '~@angular/material/theming';*/
+
+/* @import '~materialize-css/dist/css/materialize.min.css'; */
 body {
    margin: 0;
    background: #F2F2F2;
@@ -13,3 +19,6 @@ body {
 .pointer {
    cursor: pointer;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

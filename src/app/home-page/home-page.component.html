@@ -41,7 +41,27 @@
 
   </div>  -->
   <!-- /container -->
-
+  <!-- s
+  <div class="md-form mb-4 pink-textarea active-pink-textarea">
+    <i class="fas fa-angle-double-right prefix"></i>
+    <textarea id="form21" class="md-textarea form-control" rows="3"></textarea>
+  </div> -->
+  <div class="wrapper">
+    <div *ngIf="messageSent" class="alert alert-success">
+      <strong>Success!</strong> Your Opinion Has been Successfully sent.
+    </div>
+    <h1>Give Me the Openion which thing should i improve Or Leave </h1>
+    <textarea name="the-textarea" id="the-textarea" maxlength="300" placeholder="Start Typin..."autofocus></textarea>
+    <div id="the-count">
+      <span id="current">0</span>
+      <span id="maximum">/ 300</span>
+    </div>
+    <button mat-flat-button color="primary" (click)="sendMessage()">Send</button>
+  </div>
+  
+  <!-- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button> -->
 </main>
 
 

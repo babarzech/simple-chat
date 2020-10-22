@@ -59,7 +59,7 @@ import { FoooterComponent } from './foooter/foooter.component';
     MatButtonModule,
     MatInputModule,
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [FirebaseService, EditUserResolver, AuthService, AngularFireAuth, UserService ],
   bootstrap: [AppComponent],

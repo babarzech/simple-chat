@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MessageModal } from '../home-page/home-page.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class FirebaseService {
     return this.db.collection('users').doc(userKey).delete();
   }
 
-  getUsers(){
+  getUsers() {
     return this.db.collection('users').snapshotChanges();
   }
 
@@ -40,13 +41,11 @@ export class FirebaseService {
   }
 
 
-  createUser(value, avatar){
+  createUser(value: MessageModal) {
     return this.db.collection('users').add({
-      name: value.name,
-      nameToSearch: value.name.toLowerCase(),
-      surname: value.surname,
-      age: parseInt(value.age),
-      avatar: avatar
+      name: value.userName,
+      message: value.message,
+      time: value.time,
     });
   }
 }
