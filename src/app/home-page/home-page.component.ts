@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase';
 import { AuthService } from '../helpers/auth';
 import { UserInfo, UserService } from '../helpers/user';
@@ -19,7 +20,7 @@ export class HomePageComponent implements OnInit {
   public authState;
   public userInfo: UserInfo;
   public messageSent = false;
-  constructor(public user: UserService, public firebaseService: FirebaseService) {
+  constructor(public active: ActivatedRoute, public user: UserService, public firebaseService: FirebaseService) {
     // this.user.initUser(res => {
     //   // console.log(res)
     //   this.userInfo = res;
@@ -28,7 +29,7 @@ export class HomePageComponent implements OnInit {
   sendMessage() {
        const message: MessageModal = {};
        message.message = $('#the-textarea').val();
-       message.userName = 'babar';
+       message.userName = this.active.snapshot.queryParams.id ? this.active.snapshot.queryParams.id : 'babar';
        message.time = new Date().toString();
        this.messageSent = true;
        this.firebaseService.createUser(message)
@@ -41,10 +42,11 @@ export class HomePageComponent implements OnInit {
           //  this.resetFields();
           //  this.router.navigate(['/home']);
          }
-       )
+       );
     
   }
   ngOnInit() {
+    console.log(this.active.snapshot.queryParams.id,'query params');
     $('textarea').keyup(function() {
 
       // tslint:disable-next-line: one-variable-per-declaration

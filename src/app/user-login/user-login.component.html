@@ -1,8 +1,26 @@
 <app-header></app-header>
-<div>
+<!-- <div>
   <div class="formGroup">
     <button type="button" (click)="authService.GoogleAuth()">
       Log in with Google
     </button>
   </div>
+</div> -->
+<div class="container">
+  <!-- <form action="/action_page.php"> -->
+    <h2 style="text-align:center">Login with Google</h2>
+    <div class="row">
+      <!-- <br>
+      <br> -->
+      <div class="col">
+        <a style="color: white;" (click)="authService.GoogleAuth()" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
+
+      
+    </div>
+  <!-- </form> -->
 </div>
+
+

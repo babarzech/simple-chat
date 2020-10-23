@@ -12,10 +12,19 @@ export class InboxComponent implements OnInit {
   constructor(public user: UserService, public firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    this.firebaseService.getUsers().subscribe(result => {
-      this.items = result;
-      console.log(result);
-    });
+    // searchByName(){
+      const value = this.user.userInfo.id;
+      this.firebaseService.searchUsers(value)
+      .subscribe(result => {
+        this.items = result;
+        // this.name_filtered_items = result;
+        // this.items = this.combineLists(result, this.age_filtered_items);
+      })
+    // }
+    // this.firebaseService.getUsers().subscribe(result => {
+    //   this.items = result;
+    //   console.log(result);
+    // });
     $(document).ready(function () {
       $('#action_menu_btn').click(function () {
         $('.action_menu').toggle();

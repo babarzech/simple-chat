@@ -24,14 +24,13 @@ export class HomeComponent implements OnInit {
     this.getData();
   }
 
-  getData(callack?){
+  getData(){
     this.firebaseService.getUsers()
     .subscribe(result => {
-      // this.items = result;
-      callack(result);
-      // this.age_filtered_items = result;
-      // this.name_filtered_items = result;
-    });
+      this.items = result;
+      this.age_filtered_items = result;
+      this.name_filtered_items = result;
+    })
   }
 
   viewDetails(item){

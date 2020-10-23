@@ -31,9 +31,9 @@ export class FirebaseService {
   }
 
   searchUsers(searchValue){
-    return this.db.collection('users',ref => ref.where('nameToSearch', '>=', searchValue)
-      .where('nameToSearch', '<=', searchValue + '\uf8ff'))
-      .snapshotChanges()
+    return this.db.collection('users', ref => ref.where('name', '>=', searchValue)
+      .where('name', '<=', searchValue + '\uf8ff'))
+      .snapshotChanges();
   }
 
   searchUsersByAge(value){
